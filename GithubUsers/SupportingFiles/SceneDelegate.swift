@@ -17,9 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     // create a basic UIWindow and activate it
     window = UIWindow(windowScene: windowScene)
-    let viewController = UIViewController()
-    viewController.view.backgroundColor = .red
-    window?.rootViewController = viewController
+    
+    // Dependency Injection
+    let service = UserListRepository(
+        remoteRepository: UserListRemoteRepository(),
+        localRepository: CoreDataCacheUserList(),
+        networkChecker: ReachabilityNetworkHelper.shared)
+    let viewModel = UserListViewModel(service: service)
+    let viewController = UserListViewController(viewModel: viewModel)
+    
+    window?.rootViewController = UINavigationController(rootViewController: viewController)
     window?.makeKeyAndVisible()
   }
   
