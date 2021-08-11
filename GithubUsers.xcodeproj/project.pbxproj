@@ -33,6 +33,13 @@
 		32754C5726C26F1F009C1D15 /* GithubUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32754C5526C26F1F009C1D15 /* GithubUserCell.xib */; };
 		32754C5926C2721D009C1D15 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C5826C2721D009C1D15 /* UIImageView+Extensions.swift */; };
 		32754C5B26C27402009C1D15 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C5A26C27402009C1D15 /* UICollectionView+Extensions.swift */; };
+		32B1581526C28DE600ED7CC8 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581326C28DE500ED7CC8 /* UserDetailViewModel.swift */; };
+		32B1581726C28DE600ED7CC8 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581226C28DE500ED7CC8 /* UserDetailViewController.swift */; };
+		32B1581B26C28E3300ED7CC8 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B1581926C28E3300ED7CC8 /* UserDetailViewController.xib */; };
+		32B1581E26C28EFE00ED7CC8 /* UserDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581D26C28EFE00ED7CC8 /* UserDetailService.swift */; };
+		32B1582026C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581F26C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift */; };
+		32B1582226C28F7900ED7CC8 /* UserDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1582126C28F7900ED7CC8 /* UserDetailLocalRepository.swift */; };
+		32B1582426C28FC200ED7CC8 /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */; };
 		425D04B4B7B257A2C566F1BE /* Pods_GithubUsers_GithubUsersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701E325C5ABDB85377DD067 /* Pods_GithubUsers_GithubUsersUITests.framework */; };
 		717211227DAACFFCB9F881FF /* Pods_GithubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5093FF3E872FCF8717C5803 /* Pods_GithubUsers.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +94,13 @@
 		32754C5526C26F1F009C1D15 /* GithubUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GithubUserCell.xib; sourceTree = "<group>"; };
 		32754C5826C2721D009C1D15 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		32754C5A26C27402009C1D15 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		32B1581226C28DE500ED7CC8 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		32B1581326C28DE500ED7CC8 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		32B1581926C28E3300ED7CC8 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		32B1581D26C28EFE00ED7CC8 /* UserDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailService.swift; sourceTree = "<group>"; };
+		32B1581F26C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRemoteRepository.swift; sourceTree = "<group>"; };
+		32B1582126C28F7900ED7CC8 /* UserDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocalRepository.swift; sourceTree = "<group>"; };
+		32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		8C87437ADF0E1ADC754255F8 /* Pods-GithubUsers-GithubUsersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsers-GithubUsersUITests.release.xcconfig"; path = "Target Support Files/Pods-GithubUsers-GithubUsersUITests/Pods-GithubUsers-GithubUsersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C919C7E9EBE004B88E33E78 /* Pods-GithubUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsersTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsersTests/Pods-GithubUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93FC4B34ABC96A07B142DDB5 /* Pods-GithubUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsers.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsers/Pods-GithubUsers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +237,10 @@
 		32754C0726C2460F009C1D15 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				32B1581226C28DE500ED7CC8 /* UserDetailViewController.swift */,
+				32B1581326C28DE500ED7CC8 /* UserDetailViewModel.swift */,
+				32B1581926C28E3300ED7CC8 /* UserDetailViewController.xib */,
+				32B1581C26C28EE800ED7CC8 /* Repository */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -290,6 +308,17 @@
 				32754C5526C26F1F009C1D15 /* GithubUserCell.xib */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		32B1581C26C28EE800ED7CC8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				32B1581D26C28EFE00ED7CC8 /* UserDetailService.swift */,
+				32B1581F26C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift */,
+				32B1582126C28F7900ED7CC8 /* UserDetailLocalRepository.swift */,
+				32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		710FD06F9959AF38A02793CE /* Pods */ = {
@@ -423,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B1581B26C28E3300ED7CC8 /* UserDetailViewController.xib in Resources */,
 				32754BDF26C22CBD009C1D15 /* LaunchScreen.storyboard in Resources */,
 				32754C5726C26F1F009C1D15 /* GithubUserCell.xib in Resources */,
 				32754C1F26C24BED009C1D15 /* UserListViewController.xib in Resources */,
@@ -556,22 +586,28 @@
 			files = (
 				32754C5B26C27402009C1D15 /* UICollectionView+Extensions.swift in Sources */,
 				32754C4826C2588F009C1D15 /* Failure.swift in Sources */,
+				32B1581526C28DE600ED7CC8 /* UserDetailViewModel.swift in Sources */,
 				32754BDA26C22CBB009C1D15 /* GithubUsers.xcdatamodeld in Sources */,
 				32754C2226C24DC9009C1D15 /* UserListService.swift in Sources */,
 				32754C0F26C24774009C1D15 /* UserListViewModel.swift in Sources */,
 				32754BD026C22CBA009C1D15 /* AppDelegate.swift in Sources */,
+				32B1582226C28F7900ED7CC8 /* UserDetailLocalRepository.swift in Sources */,
 				32754C4426C254D2009C1D15 /* NetworkHelper.swift in Sources */,
 				32754C1926C248FA009C1D15 /* UIApplication+Extension.swift in Sources */,
 				32754C1B26C2499B009C1D15 /* Reactive+Extensions.swift in Sources */,
+				32B1581726C28DE600ED7CC8 /* UserDetailViewController.swift in Sources */,
+				32B1581E26C28EFE00ED7CC8 /* UserDetailService.swift in Sources */,
 				32754C2A26C251E5009C1D15 /* UserListRemoteRepository.swift in Sources */,
 				32754BD226C22CBA009C1D15 /* SceneDelegate.swift in Sources */,
 				32754C1426C247AF009C1D15 /* BaseViewController.swift in Sources */,
 				32754C1126C24774009C1D15 /* UserListViewController.swift in Sources */,
+				32B1582426C28FC200ED7CC8 /* UserDetailRepository.swift in Sources */,
 				32754C5926C2721D009C1D15 /* UIImageView+Extensions.swift in Sources */,
 				32754C4626C257D9009C1D15 /* RequestError.swift in Sources */,
 				32754C2C26C25200009C1D15 /* UserListLocalRepository.swift in Sources */,
 				32754C2E26C2521B009C1D15 /* UserListRepository.swift in Sources */,
 				32754C5626C26F1F009C1D15 /* GithubUserCell.swift in Sources */,
+				32B1582026C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift in Sources */,
 				32754C2726C24E75009C1D15 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

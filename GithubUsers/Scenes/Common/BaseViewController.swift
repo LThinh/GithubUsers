@@ -43,7 +43,9 @@ extension Reactive where Base: BaseViewController {
     
     private func showErrorAlert(title: String = "", body: String) {
         let topViewController = UIApplication.shared.topViewController
-        let alert = UIAlertController()
+        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
         topViewController?.present(alert, animated: true)
     }
 }

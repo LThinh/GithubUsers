@@ -14,6 +14,7 @@ class GithubUserCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
     }
 

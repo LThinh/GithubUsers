@@ -15,22 +15,23 @@ protocol NetworkHelper {
 class ReachabilityNetworkHelper: NetworkHelper {
     static let shared = ReachabilityNetworkHelper()
     
-    private var _networkAvailable = false
-    
     var isNetworkAvailable: Bool {
-        return _networkAvailable
+        return reachability.connection != .unavailable
     }
+    
+    var networkStatusChanged: ((Bool) -> ())?
     
     let reachability: Reachability
     
     init() {
         reachability = try! Reachability()
-        _networkAvailable = reachability.connection != .unavailable
         reachability.whenReachable = { [weak self] _ in
-            self?._networkAvailable = true
+            dump("Connected")
+            self?.networkStatusChanged?(true)
         }
         reachability.whenUnreachable = { [weak self] _ in
-            self?._networkAvailable = false
+            dump("Not connected")
+            self?.networkStatusChanged?(false)
         }
 
         do {
