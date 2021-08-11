@@ -18,7 +18,7 @@ class CoreDataCacheUserDetail: UserDetailLocalRepository {
     static var users = [GithubUser]()
     func cache(user: GithubUser, completion: @escaping ((Result<Void, Failure>) -> Void)) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        DispatchQueue.global().async {
+        context.perform {
             let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
             let predicate = NSPredicate(format: "id==\(user.id)")
             fetchRequest.predicate = predicate
@@ -52,7 +52,7 @@ class CoreDataCacheUserDetail: UserDetailLocalRepository {
     
     func fetch(username: String, completion: @escaping ((Result<GithubUser, Failure>) -> Void)) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        DispatchQueue.global().async {
+        context.perform {
             let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
             let predicate = NSPredicate(format: "username==%@", username)
             fetchRequest.predicate = predicate

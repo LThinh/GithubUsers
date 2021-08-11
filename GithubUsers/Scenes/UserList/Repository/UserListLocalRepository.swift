@@ -15,11 +15,9 @@ protocol UserListLocalRepository {
 }
 
 class CoreDataCacheUserList: UserListLocalRepository {
-    private static var users = [GithubUser]()
-    
     func cache(users: [GithubUser], completion: @escaping ((Result<Void, Failure>) -> Void)) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        DispatchQueue.global().async {
+        context.perform {
             for user in users {
                 let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
                 let predicate = NSPredicate(format: "id==\(user.id)")
@@ -55,7 +53,7 @@ class CoreDataCacheUserList: UserListLocalRepository {
     
     func fetch(completion: @escaping ((Result<[GithubUser], Failure>) -> Void)) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        DispatchQueue.global().async {
+        context.perform {
             let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
             do {
                 let fetchedUsers = try context.fetch(fetchRequest)
