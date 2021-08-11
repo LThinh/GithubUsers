@@ -25,6 +25,6 @@ class GithubUserCell: UITableViewCell {
     func setupUI(using user: GithubUser) {
         usernameLabel.text = user.username
         urlLabel.text = user.url
-        avatarImageView.setImage(from: user.avatarUrl)
+        avatarImageView.setImage(from: user.avatarUrl, placeHolder: UIImage(named: "user_icon"))
     }
 }

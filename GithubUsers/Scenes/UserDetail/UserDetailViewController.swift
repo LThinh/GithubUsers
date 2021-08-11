@@ -78,7 +78,7 @@ class UserDetailViewController: BaseViewController {
 extension Reactive where Base: UserDetailViewController {
     var user: Binder<GithubUser> {
         return Binder(base) { view, user in
-            view.avatarImageView.setImage(from: user.avatarUrl)
+            view.avatarImageView.setImage(from: user.avatarUrl, placeHolder: UIImage(named: "user_icon"))
             view.usernameLabel.text = user.username
             view.locationLabel.text = user.location
             view.bioLabel.text = user.bio

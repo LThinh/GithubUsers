@@ -23,6 +23,7 @@ class UserListRepository: UserListService {
     
     func getListUser(completion: @escaping (Result<[GithubUser], Failure>) -> Void) {
         if networkHelper.isNetworkAvailable {
+            print("Getting data from server")
             remoteRepository.getListUser { [weak self] result in
                 switch result {
                 case .failure(let error):
@@ -35,6 +36,7 @@ class UserListRepository: UserListService {
                 }
             }
         } else {
+            print("Getting data from cache")
             localRepository.fetch(completion: completion)
         }
     }

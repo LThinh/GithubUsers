@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UserListLocalRepository {
     func cache(users: [GithubUser], completion: @escaping ((Result<Void, Failure>) -> Void))
@@ -17,16 +18,56 @@ class CoreDataCacheUserList: UserListLocalRepository {
     private static var users = [GithubUser]()
     
     func cache(users: [GithubUser], completion: @escaping ((Result<Void, Failure>) -> Void)) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         DispatchQueue.global().async {
-            CoreDataCacheUserList.users.append(contentsOf: users)
-            completion(.success(()))
+            for user in users {
+                let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
+                let predicate = NSPredicate(format: "id==\(user.id)")
+                fetchRequest.predicate = predicate
+                do {
+                    if let fetchedUser = try context.fetch(fetchRequest).first {
+                        fetchedUser.setData(from: user)
+                    }
+                } catch let error {
+                    dump(error.localizedDescription)
+                }
+                
+                if let entity = NSEntityDescription.entity(
+                    forEntityName: GithubUserCache.identifier,
+                    in: context),
+                      let cacheUser = NSManagedObject(
+                        entity: entity,
+                        insertInto: context) as? GithubUserCache {
+                    cacheUser.setData(from: user)
+                }
+                do {
+                    try context.save()
+                } catch let error {
+                    dump(error.localizedDescription)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(.success(()))
+                }
+            }
         }
     }
     
     func fetch(completion: @escaping ((Result<[GithubUser], Failure>) -> Void)) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         DispatchQueue.global().async {
-            print("Getting from cache")
-            completion(.success(CoreDataCacheUserList.users))
+            let fetchRequest: NSFetchRequest<GithubUserCache> = GithubUserCache.fetchRequest()
+            do {
+                let fetchedUsers = try context.fetch(fetchRequest)
+                let users = fetchedUsers.map({ $0.mapToGithubUser() })
+                DispatchQueue.main.async {
+                    completion(.success(users))
+                }
+            } catch let error {
+                DispatchQueue.main.async {
+                    completion(.failure(.init(error: error)))
+                }
+            }
         }
     }
     

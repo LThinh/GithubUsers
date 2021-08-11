@@ -11,7 +11,6 @@ class CompositionRoot {
     var rootViewController: UINavigationController
     
     init() {
-        // Dependency Injection
         let service = UserListRepository(
             remoteRepository: UserListRemoteRepository(),
             localRepository: CoreDataCacheUserList(),
@@ -22,7 +21,6 @@ class CompositionRoot {
     }
     
     private var userDetailFactory: ((String) -> UIViewController) = { username in
-        // Dependency Injection
         let service = UserDetailRepository(
             remoteRepository: UserDetailRemoteRepository(),
             localRepository: CoreDataCacheUserDetail(),

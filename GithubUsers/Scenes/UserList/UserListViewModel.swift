@@ -33,7 +33,6 @@ final class UserListViewModel {
     // MARK: - Private functions
     private func setupBinding() {
         let activityIndicator = ActivityIndicator()
-        let errorTracker = ErrorTracker()
         
         let requestTrigger = Observable.merge(
             viewIsReady.asObservable(),
@@ -42,7 +41,6 @@ final class UserListViewModel {
         requestTrigger
             .flatMapLatest({ [unowned self] in
                 return getListUser()
-                    .trackError(errorTracker)
                     .trackActivity(activityIndicator)
             })
             .bind(to: listUser)
@@ -50,23 +48,17 @@ final class UserListViewModel {
         
         Observable.merge(
             viewIsReady.mapToTrue(),
-            activityIndicator.asObservable().mapToFalse()
+            activityIndicator.asObservable().filter({ !$0 })
         )
         .bind(to: pageLoading)
         .disposed(by: disposeBag)
         
         Observable.merge(
             refreshTrigger.mapToTrue(),
-            activityIndicator.asObservable().mapToFalse()
+            activityIndicator.asObservable().filter({ !$0 })
         )
         .bind(to: refreshLoading)
         .disposed(by: disposeBag)
-        
-        errorTracker
-            .asObservable()
-            .map({ $0.localizedDescription })
-            .bind(to: errorMessage)
-            .disposed(by: disposeBag)
     }
     
     private func getListUser() -> Observable<[GithubUser]> {
@@ -78,7 +70,8 @@ final class UserListViewModel {
             self.service.getListUser { result in
                 switch result {
                 case .failure(let error):
-                    observer.onError(error)
+                    self.errorMessage.accept(error.localizedDescription)
+                    observer.onCompleted()
                 case .success(let users):
                     observer.onNext(users)
                     observer.onCompleted()
