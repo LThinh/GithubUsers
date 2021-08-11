@@ -18,15 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // create a basic UIWindow and activate it
         window = UIWindow(windowScene: windowScene)
         
-        // Dependency Injection
-        let service = UserListRepository(
-            remoteRepository: UserListRemoteRepository(),
-            localRepository: CoreDataCacheUserList(),
-            networkChecker: ReachabilityNetworkHelper.shared)
-        let viewModel = UserListViewModel(service: service)
-        let viewController = UserListViewController(viewModel: viewModel)
-        
-        window?.rootViewController = UINavigationController(rootViewController: viewController)
+        let compositionRoot = CompositionRoot()
+        window?.rootViewController = compositionRoot.rootViewController
         window?.makeKeyAndVisible()
         addInternetIndicatorView()
     }

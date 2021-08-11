@@ -14,13 +14,17 @@ final class UserListViewController: BaseViewController {
     
     // MARK: - Property
     private let refreshControl = UIRefreshControl()
+    private var userDetailFactory: ((String) -> UIViewController)!
     
     // MARK: - View Model
     private var viewModel: UserListViewModel!
     
     // MARK: - Init
-    convenience init(viewModel: UserListViewModel) {
+    convenience init(
+        viewModel: UserListViewModel,
+        userDetailFactory: @escaping ((String) -> UIViewController)) {
         self.init()
+        self.userDetailFactory = userDetailFactory
         self.viewModel = viewModel
     }
     
@@ -44,14 +48,9 @@ final class UserListViewController: BaseViewController {
         tableView.addSubview(refreshControl)
         
         tableView.rx.modelSelected(GithubUser.self)
-            .bind { user in
-                // Dependency Injection
-                let service = UserDetailRepository(
-                    remoteRepository: UserDetailRemoteRepository(),
-                    localRepository: CoreDataCacheUserDetail(),
-                    networkChecker: ReachabilityNetworkHelper.shared)
-                let viewModel = UserDetailViewModel(username: user.username, service: service)
-                let viewController = UserDetailViewController(viewModel: viewModel)
+            .bind { [weak self] user in
+                guard let self = self else { return }
+                let viewController = self.userDetailFactory(user.username)
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
             .disposed(by: disposeBag)

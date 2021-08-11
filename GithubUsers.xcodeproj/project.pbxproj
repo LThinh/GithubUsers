@@ -33,6 +33,7 @@
 		32754C5726C26F1F009C1D15 /* GithubUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32754C5526C26F1F009C1D15 /* GithubUserCell.xib */; };
 		32754C5926C2721D009C1D15 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C5826C2721D009C1D15 /* UIImageView+Extensions.swift */; };
 		32754C5B26C27402009C1D15 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C5A26C27402009C1D15 /* UICollectionView+Extensions.swift */; };
+		3299F30726C38F8400424BED /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299F30626C38F8400424BED /* CompositionRoot.swift */; };
 		32B1581526C28DE600ED7CC8 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581326C28DE500ED7CC8 /* UserDetailViewModel.swift */; };
 		32B1581726C28DE600ED7CC8 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581226C28DE500ED7CC8 /* UserDetailViewController.swift */; };
 		32B1581B26C28E3300ED7CC8 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B1581926C28E3300ED7CC8 /* UserDetailViewController.xib */; };
@@ -94,6 +95,7 @@
 		32754C5526C26F1F009C1D15 /* GithubUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GithubUserCell.xib; sourceTree = "<group>"; };
 		32754C5826C2721D009C1D15 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		32754C5A26C27402009C1D15 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		3299F30626C38F8400424BED /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		32B1581226C28DE500ED7CC8 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		32B1581326C28DE500ED7CC8 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		32B1581926C28E3300ED7CC8 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				32754C1326C247AF009C1D15 /* BaseViewController.swift */,
+				3299F30626C38F8400424BED /* CompositionRoot.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				32754C2E26C2521B009C1D15 /* UserListRepository.swift in Sources */,
 				32754C5626C26F1F009C1D15 /* GithubUserCell.swift in Sources */,
 				32B1582026C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift in Sources */,
+				3299F30726C38F8400424BED /* CompositionRoot.swift in Sources */,
 				32754C2726C24E75009C1D15 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
