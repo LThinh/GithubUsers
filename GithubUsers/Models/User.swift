@@ -11,6 +11,7 @@ struct GithubUser: Codable {
     let id: Int
     let avatarUrl: String?
     let username: String
+    let name: String?
     let url: String
     let location: String?
     let bio: String?
@@ -22,6 +23,7 @@ struct GithubUser: Codable {
         case id
         case avatarUrl = "avatar_url"
         case username = "login"
+        case name
         case url
         case location
         case bio

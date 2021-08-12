@@ -19,6 +19,7 @@ public class GithubUserCache: NSManagedObject {
         self.avatarUrl = user.url
         self.id = Int64(user.id)
         self.username = user.username
+        self.name = user.name
         self.bio = user.bio
         self.followers = Int64(user.followers ?? 0)
         self.following = Int64(user.following ?? 0)
@@ -32,6 +33,7 @@ public class GithubUserCache: NSManagedObject {
             id: Int(id),
             avatarUrl: avatarUrl,
             username: username,
+            name: name,
             url: url ?? "",
             location: location,
             bio: bio,

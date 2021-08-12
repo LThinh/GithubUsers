@@ -11,12 +11,13 @@
 		324228F126C3B6C4002B450A /* GithubUserCache+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324228EF26C3B6C4002B450A /* GithubUserCache+CoreDataClass.swift */; };
 		324228F226C3B6C4002B450A /* GithubUserCache+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324228F026C3B6C4002B450A /* GithubUserCache+CoreDataProperties.swift */; };
 		324228F426C3BAA1002B450A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324228F326C3BAA1002B450A /* CoreDataManager.swift */; };
+		324228F726C3E0FC002B450A /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324228F626C3E0FC002B450A /* UserDetailViewModelTests.swift */; };
+		3242290626C3E421002B450A /* UserDetailViewModelTests+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242290526C3E421002B450A /* UserDetailViewModelTests+Helper.swift */; };
 		32754BD026C22CBA009C1D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754BCF26C22CBA009C1D15 /* AppDelegate.swift */; };
 		32754BD226C22CBA009C1D15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754BD126C22CBA009C1D15 /* SceneDelegate.swift */; };
 		32754BDA26C22CBB009C1D15 /* GithubUsers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32754BD826C22CBA009C1D15 /* GithubUsers.xcdatamodeld */; };
 		32754BDC26C22CBD009C1D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32754BDB26C22CBD009C1D15 /* Assets.xcassets */; };
 		32754BDF26C22CBD009C1D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32754BDD26C22CBD009C1D15 /* LaunchScreen.storyboard */; };
-		32754BEA26C22CBE009C1D15 /* GithubUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754BE926C22CBE009C1D15 /* GithubUsersTests.swift */; };
 		32754BF526C22CBE009C1D15 /* GithubUsersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754BF426C22CBE009C1D15 /* GithubUsersUITests.swift */; };
 		32754C0F26C24774009C1D15 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C0E26C24774009C1D15 /* UserListViewModel.swift */; };
 		32754C1126C24774009C1D15 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32754C0B26C24773009C1D15 /* UserListViewController.swift */; };
@@ -44,6 +45,8 @@
 		32B1582026C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1581F26C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift */; };
 		32B1582226C28F7900ED7CC8 /* UserDetailLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1582126C28F7900ED7CC8 /* UserDetailLocalRepository.swift */; };
 		32B1582426C28FC200ED7CC8 /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */; };
+		32D0803926C4C279008469E1 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D0803826C4C278008469E1 /* XCTestCase+Extensions.swift */; };
+		32D0803B26C4C3DD008469E1 /* PublishRelayWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D0803A26C4C3DD008469E1 /* PublishRelayWrapper.swift */; };
 		425D04B4B7B257A2C566F1BE /* Pods_GithubUsers_GithubUsersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701E325C5ABDB85377DD067 /* Pods_GithubUsers_GithubUsersUITests.framework */; };
 		717211227DAACFFCB9F881FF /* Pods_GithubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5093FF3E872FCF8717C5803 /* Pods_GithubUsers.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,8 @@
 		324228EF26C3B6C4002B450A /* GithubUserCache+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GithubUserCache+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		324228F026C3B6C4002B450A /* GithubUserCache+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GithubUserCache+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		324228F326C3BAA1002B450A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		324228F626C3E0FC002B450A /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
+		3242290526C3E421002B450A /* UserDetailViewModelTests+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetailViewModelTests+Helper.swift"; sourceTree = "<group>"; };
 		32754BCC26C22CBA009C1D15 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32754BCF26C22CBA009C1D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32754BD126C22CBA009C1D15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		32754BDE26C22CBD009C1D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32754BE026C22CBD009C1D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32754BE526C22CBE009C1D15 /* GithubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32754BE926C22CBE009C1D15 /* GithubUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersTests.swift; sourceTree = "<group>"; };
 		32754BEB26C22CBE009C1D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32754BF026C22CBE009C1D15 /* GithubUsersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUsersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32754BF426C22CBE009C1D15 /* GithubUsersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersUITests.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		32B1581F26C28F6A00ED7CC8 /* UserDetailRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRemoteRepository.swift; sourceTree = "<group>"; };
 		32B1582126C28F7900ED7CC8 /* UserDetailLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocalRepository.swift; sourceTree = "<group>"; };
 		32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
+		32D0803826C4C278008469E1 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		32D0803A26C4C3DD008469E1 /* PublishRelayWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishRelayWrapper.swift; sourceTree = "<group>"; };
 		8C87437ADF0E1ADC754255F8 /* Pods-GithubUsers-GithubUsersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsers-GithubUsersUITests.release.xcconfig"; path = "Target Support Files/Pods-GithubUsers-GithubUsersUITests/Pods-GithubUsers-GithubUsersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C919C7E9EBE004B88E33E78 /* Pods-GithubUsersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsersTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsersTests/Pods-GithubUsersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93FC4B34ABC96A07B142DDB5 /* Pods-GithubUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubUsers.debug.xcconfig"; path = "Target Support Files/Pods-GithubUsers/Pods-GithubUsers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3242290426C3E3FF002B450A /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				324228F626C3E0FC002B450A /* UserDetailViewModelTests.swift */,
+				3242290526C3E421002B450A /* UserDetailViewModelTests+Helper.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		32754BC326C22CBA009C1D15 = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +202,8 @@
 		32754BE826C22CBE009C1D15 /* GithubUsersTests */ = {
 			isa = PBXGroup;
 			children = (
-				32754BE926C22CBE009C1D15 /* GithubUsersTests.swift */,
+				32D0803726C4C25F008469E1 /* Extension */,
+				3242290426C3E3FF002B450A /* UserDetail */,
 				32754BEB26C22CBE009C1D15 /* Info.plist */,
 			);
 			path = GithubUsersTests;
@@ -331,6 +347,15 @@
 				32B1582326C28FC200ED7CC8 /* UserDetailRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		32D0803726C4C25F008469E1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				32D0803826C4C278008469E1 /* XCTestCase+Extensions.swift */,
+				32D0803A26C4C3DD008469E1 /* PublishRelayWrapper.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		710FD06F9959AF38A02793CE /* Pods */ = {
@@ -632,7 +657,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32754BEA26C22CBE009C1D15 /* GithubUsersTests.swift in Sources */,
+				324228F726C3E0FC002B450A /* UserDetailViewModelTests.swift in Sources */,
+				32D0803B26C4C3DD008469E1 /* PublishRelayWrapper.swift in Sources */,
+				32D0803926C4C279008469E1 /* XCTestCase+Extensions.swift in Sources */,
+				3242290626C3E421002B450A /* UserDetailViewModelTests+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,7 @@ extension GithubUserCache {
     @NSManaged public var publicRepos: Int64
     @NSManaged public var url: String?
     @NSManaged public var username: String
+    @NSManaged public var name: String?
 
 }
 
