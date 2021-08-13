@@ -37,16 +37,12 @@ extension Reactive where Base: BaseViewController {
     // Reactive wrapper for showing error message alert on topViewController
     var showErrorMessage: Binder<String> {
         return Binder(base) { _, message in
-            showErrorAlert(body: message)
+            let topViewController = UIApplication.shared.topViewController
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            topViewController?.present(alert, animated: true)
         }
-    }
-    
-    private func showErrorAlert(title: String = "", body: String) {
-        let topViewController = UIApplication.shared.topViewController
-        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(action)
-        topViewController?.present(alert, animated: true)
     }
 }
 

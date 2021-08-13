@@ -67,10 +67,10 @@ final class UserListViewModel {
                 observer.onCompleted()
                 return Disposables.create()
             }
-            self.service.getListUser { result in
+            self.service.getListUser { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    self.errorMessage.accept(error.localizedDescription)
+                    self?.errorMessage.accept(error.localizedDescription)
                     observer.onCompleted()
                 case .success(let users):
                     observer.onNext(users)

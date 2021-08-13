@@ -69,10 +69,10 @@ class UserDetailViewModel {
                 observer.onCompleted()
                 return Disposables.create()
             }
-            self.service.getUserDetail(username: self.username) { result in
+            self.service.getUserDetail(username: self.username) { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    self.errorMessage.accept(error.localizedDescription)
+                    self?.errorMessage.accept(error.localizedDescription)
                     observer.onCompleted()
                 case .success(let user):
                     observer.onNext(user)
